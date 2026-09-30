@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telas de Login - Flexbox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .phone-card {
+            width: 280px;
+            height: 540px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .phone-card.blue-screen {
+            background: linear-gradient(180deg, #0042a5 0%, #0072ff 45%, #00c6ff 100%);
+            color: white;
+        }
+        .top-banner {
+            height: 160px;
+            background: linear-gradient(180deg, #0072ff 0%, #00c6ff 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            clip-path: ellipse(150% 100% at 50% 0%);
+            color: white;
+        }
+        .logo-circle {
+            width: 55px;
+            height: 55px;
+            border: 3px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .company-name { font-size: 15px; font-weight: bold; letter-spacing: 1px; margin-top: 8px; }
+        .slogan { font-size: 10px; opacity: 0.8; }
+        .content {
+            flex: 1;
+            padding: 20px 18px 10px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .form-group { display: flex; flex-direction: column; gap: 10px; }
+        .input-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #00c6ff;
+            border-radius: 20px;
+            padding: 8px 12px;
+            background-color: #f9f9f9;
+        }
+        .input-box input { border: none; outline: none; background: transparent; width: 100%; font-size: 11px; color: #333; }
+        .input-icon {
+            width: 20px; height: 20px;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            border-radius: 50%; color: white;
+            display: flex; align-items: center; justify-content: center; font-size: 10px;
+        }
+        .options-row { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #666; }
+        .options-row label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+        .forgot-pass { color: #333; text-decoration: none; font-weight: bold; }
+        .btn-primary {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            color: white; border: none; border-radius: 20px;
+            padding: 8px; font-weight: bold; font-size: 12px; cursor: pointer;
+        }
+        .btn-white {
+            background: white; color: #0072ff; border: none;
+            border-radius: 20px; padding: 10px; font-weight: bold; font-size: 12px; cursor: pointer;
+        }
+        .social-section { text-align: center; margin-top: 5px; }
+        .social-title { font-size: 9px; color: #777; margin-bottom: 6px; }
+        .social-icons { display: flex; justify-content: center; gap: 10px; }
+        .social-btn {
+            width: 24px; height: 24px; border: 1px solid #00c6ff; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: #0072ff; font-size: 10px; font-weight: bold;
+        }
+        .touch-container { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; }
+        .touch-icon {
+            width: 50px; height: 50px; border: 2px dashed rgba(255, 255, 255, 0.8);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white;
+        }
+        .bottom-banner {
+            height: 60px;
+            background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%);
+            clip-path: ellipse(150% 100% at 50% 100%);
+            display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; gap: 4px;
+        }
+        .bottom-banner a { color: white; font-weight: bold; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- TELA 1: LOGIN -->
+    <div class="phone-card">
+        <div class="top-banner"><div class="logo-circle">︾</div></div>
+        <div class="content">
+            <div class="form-group">
+                <div class="input-box"><input type="text" placeholder="User Name"><div class="input-icon">👤</div></div>
+                <div class="input-box"><input type="password" placeholder="Password"><div class="input-icon">🔑</div></div>
+                <div class="options-row"><label><input type="checkbox"> Remember Password</label></div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button class="btn-primary" style="padding: 6px 16px;">Sign in</button>
+                    <a href="#" class="forgot-pass" style="font-size: 9px;">Forget Password?</a>
+                </div>
+            </div>
+            <div class="social-section">
+                <div class="social-title">Sign in with Social Media</div>
+                <div class="social-icons">
+                    <div class="social-btn">f</div>
+                    <div class="social-btn">t</div>
+                    <div class="social-btn">in</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-banner">
+            <span>Don't have account?</span><a href="#">Sign up ➔</a>
+        </div>
+    </div>
+
+    <!-- TELA 2: TOTALMENTE AZUL -->
+    <div class="phone-card blue-screen">
+        <div style="padding-top: 40px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div class="logo-circle">︾</div>
+            <div class="company-name">COMPANY NAME</div>
+            <div class="slogan">SOLOGAN HERE</div>
+        </div>
+        <div class="content" style="justify-content: center; gap: 12px; padding-bottom: 25px;">
+            <button class="btn-white">Sign in</button>
+            <button class="btn-white">Sign up</button>
+            <div class="touch-container">
+                <span style="font-size: 9px; opacity: 0.9;">Now! Quick Login Use Touch ID</span>
+                <div class="touch-icon">👆</div>
+                <span style="font-size: 9px; font-weight: bold;">Use Touch ID</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA 3: CADASTRO -->
+    <div class="phone-card">
+        <div class="top-banner"><div class="logo-circle">︾</div></div>
+        <div class="content">
+            <div class="form-group">
+                <div class="input-box"><input type="text" placeholder="User Name"><div class="input-icon">👤</div></div>
+                <div class="input-box"><input type="email" placeholder="E-mail"><div class="input-icon">✉</div></div>
+                <div class="input-box"><input type="password" placeholder="Password"><div class="input-icon">🔑</div></div>
+                <div class="options-row"><label><input type="checkbox"> Allow Term & Conditions</label></div>
+                <button class="btn-primary" style="margin-top: 5px; width: 50%; align-self: center;">Sign up</button>
+            </div>
+        </div>
+        <div class="bottom-banner">
+            <span>Already have an account?</span><a href="#">Sign in ➔</a>
+        </div>
+    </div>
+
+</body>
+</html>
